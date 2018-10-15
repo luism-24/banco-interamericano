@@ -5,13 +5,21 @@ const controller = require('../controller/controller');
 
 router.get('/', (req, res) => {
 
-    res.send('Hola banco');
+    req.getConnection((err, conect) => {
+
+        conect.query('SELECT * FROM users', (err, users) => {
+
+            res.json(users);
+
+        });
+
+    });
 
 });
-router.post('/banco-interamericano/registro', controller.registre);
-router.post('/banco-interamericano/login', controller.login);
-router.post('/banco-interamericano/consignacion', controller.consignment);
-router.post('/banco-interamericano/retiro', controller.retirement);
-router.post('/banco-interamericano/transferencia', controller.transfer);
+router.post('/registro', controller.registre);
+router.post('/login', controller.login);
+router.post('/consignacion', controller.consignment);
+router.post('/retiro', controller.retirement);
+router.post('/transferencia', controller.transfer);
 
 module.exports = router;

@@ -2,7 +2,24 @@ const controll = {};
 
 controll.registre = (req, res) => {
 
-    res.send('Registro de usuario');
+    var nombre = 'Felipe';
+
+    req.getConnection((err, conect) => {
+
+        conect.query('INSERT INTO users(nombre) VALUES(?)', [nombre], (err) => {
+
+            if (err) {
+                console.log(err);
+            } else {
+                res.json({
+                    data: 'Guardado'
+                })
+            }
+            
+        });
+
+    });
+
 
 }
 

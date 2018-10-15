@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/luism-24/banco-interamericano#readme",
   "dependencies": {
+    "cors": "^2.8.4",
     "express": "^4.16.4",
     "express-myconnection": "^1.0.4",
     "mongoose": "^5.3.2",
