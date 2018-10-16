@@ -1,0 +1,10 @@
+<h1>{{dato}}</h1>
+
+<form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="bancoService.myUser.name" placeholder="Ingrese su nombre">
+        </div>
+    </div>
+    <button>Registrarme</button>
+</form>
