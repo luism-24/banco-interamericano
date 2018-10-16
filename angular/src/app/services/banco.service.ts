@@ -6,12 +6,11 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class BancoService {
-
   myUser: User;
 
   readonly URL_API = 'http://localhost:3000/banco-interamericano/registro';
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.myUser = new User();
   }
 

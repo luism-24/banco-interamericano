@@ -20,6 +20,7 @@ export class BancoComponent implements OnInit {
 
     console.log(form.value);
     this.bancoService.register(form.value);
+    
   }
 
 }
