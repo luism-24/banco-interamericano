@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class BancoComponent implements OnInit {
 
-  dato = 'Banco Interamericano';
+  title = 'Registro';
 
   constructor(private bancoService: BancoService) { }
 

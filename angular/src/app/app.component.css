@@ -1,0 +1,15 @@
+.head{
+    text-align:center; 
+    margin: 10px;
+    background-color: #1A2E45;
+    color: white;
+}
+
+.head h1{
+    margin: 1rem;
+}
+
+.component{
+    text-align: center;
+}
+
