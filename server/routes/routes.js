@@ -1,17 +1,25 @@
 const express = require('express');
 const router = express.Router();
 
+//Conexion de la bd postgres
+const conec = require('../conect/conection');
+
 const controller = require('../controller/controller');
 
 router.get('/', (req, res) => {
 
-    req.getConnection((err, conect) => {
+    conec.query('SELECT * FROM dueños', (err, data) => {
 
-        conect.query('SELECT * FROM users', (err, users) => {
+        if (err) {
+            console.log(err);
 
-            res.json(users);
+        } else {
 
-        });
+            res.json({
+                data: data.rows
+            });
+
+        }
 
     });
 
