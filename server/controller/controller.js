@@ -1,25 +1,11 @@
 const controll = {};
 
+//Conexion de la bd postgres
+const conec = require('../conect/conection');
+
 controll.registre = (req, res) => {
 
-    var nombre = 'Felipe';
-
-    req.getConnection((err, conect) => {
-
-        conect.query('INSERT INTO users(nombre) VALUES(?)', [nombre], (err) => {
-
-            if (err) {
-                console.log(err);
-            } else {
-                res.json({
-                    data: 'Guardado'
-                })
-            }
-            
-        });
-
-    });
-
+    res.send('Registro de usuarios');
 
 }
 
