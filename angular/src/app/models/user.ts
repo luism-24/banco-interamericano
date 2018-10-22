@@ -1,6 +1,6 @@
 export class User {
 
-    constructor(name = '', cc = 0, mail = '', password = '', confirmPassword = '', addres = '') {
+    constructor(name = '', cc = '', mail = '', password = '', confirmPassword = '', addres = '') {
         this.name = name;
         this.cc = cc;
         this.mail = mail;
@@ -9,7 +9,7 @@ export class User {
         this.addres = addres;
     }
     name: string;
-    cc : number;
+    cc : string;
     mail : string;
     password : string;
     confirmPassword : string;
