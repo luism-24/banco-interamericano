@@ -1,0 +1,23 @@
+<div class="col s12 center-align">
+
+    <h5>Ingresar</h5>
+
+    <form #registerForm="ngForm" (ngSubmit)="loginUser(loginForm)">
+        <div class="row">
+            <div class="col s12 center-align">
+                <input type="text" name="name" #name="ngModel" [(ngModel)]="bancoService.myUser.name" placeholder="Usuario">
+            </div>
+            <div class="col s12">
+                <input type="text" name="password" #name="ngModel" [(ngModel)]="bancoService.myUser.password"
+                    placeholder="Ingrese su contraseña">
+            </div>
+            <div class="col s12">
+                <input type="text" name="confirmPassword" #name="ngModel" [(ngModel)]="bancoService.myUser.confirmPassword"
+                    placeholder="Confirme su contraseña">
+            </div>
+            <a href="#" class="btn btn-danger"><button style="padding-inline-end: 5px">Ingresar</button></a>
+            <a href="#" class="btn btn-danger"><button style="padding-inline-end:5px">Registrarme</button></a>
+        </div>
+    </form>
+
+</div>

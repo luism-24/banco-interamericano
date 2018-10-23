@@ -9,7 +9,6 @@ export class RetireComponent implements OnInit {
   
   
 
-
   constructor() { }
 
   ngOnInit() {
