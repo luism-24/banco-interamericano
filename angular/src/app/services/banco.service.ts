@@ -17,4 +17,6 @@ export class BancoService {
   register(user: User) {
     return this.http.post(this.URL_API, user);
   }
+
+
 }
