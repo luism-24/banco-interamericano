@@ -1,6 +1,6 @@
 <div class="col s12 center-align">
 
-        <h1>{{title}}</h1>
+        <h1>REGISTRO</h1>
 
         <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
                 <div class="row">
@@ -13,7 +13,7 @@
                                         placeholder="Ingrese su cedula">
                         </div>
                         <div class="col s12">
-                                <input type="text" name="correo" #name="ngModel" [(ngModel)]="bancoService.myUser.correo"
+                                <input type="email" name="correo" #name="ngModel" [(ngModel)]="bancoService.myUser.correo"
                                         placeholder="Ingrese su correo">
                         </div>
                         <div class="col s12">

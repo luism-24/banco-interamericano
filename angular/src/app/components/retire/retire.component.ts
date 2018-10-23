@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./retire.component.css']
 })
 export class RetireComponent implements OnInit {
+  
+  
+
 
   constructor() { }
 
