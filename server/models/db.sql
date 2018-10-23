@@ -1,81 +1,110 @@
 CREATE TABLE USUARIOS(
 
-  id INT(6) AUTO_INCREMENT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   nombre VARCHAR(50) NOT NULL,
   correo VARCHAR(50) NOT NULL,
   telefono VARCHAR(30) NOT NULL,
   contraseña VARCHAR(40) NOT NULL,
   codigo VARCHAR(20) NOT NULL,
-  id_pais INT(6) NOT NULL,
-  id_rol INT(6) NOT NULL,
-  id_cuenta INT(6) NOT NULL
+  id_pais INTEGER NOT NULL,
+  id_rol INTEGER NOT NULL,
+  numCuenta VARCHAR(30) NOT NULL
 
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+);
 
 CREATE TABLE CUENTAS(
 
-  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  numeroC VARCHAR(30) NOT NULL,
-  saldo DEC(8,2) NOT NULL,
-  id_tipoC INT(6) NOT NULL
+  id SERIAL,
+  numeroC VARCHAR(30) NOT NULL PRIMARY KEY,
+  saldo DEC(8,2) NOT NULL DEFAULT 0,
+  id_tipoC INTEGER NOT NULL
 
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+);
 
 CREATE TABLE TIPO_CUENTAS (
 
-  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   nombre VARCHAR(50) NOT NULL
 
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+);
 
 CREATE TABLE ROLES (
 
-  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   nombre VARCHAR(50) NOT NULL
 
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+);
 
 CREATE TABLE PAISES (
 
-  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   nombre VARCHAR(50) NOT NULL,
   moneda VARCHAR(30) NOT NULL
 
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+);
 
 CREATE TABLE OPERACIONES (
 
-  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   monto DEC(8,2) NOT NULL,
   fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  id_usuario_realiza INT(6) NOT NULL,
-  id_usuario_destino INT(6) NOT NULL,
-  id_tipoO INT(6) NOT NULL
+  id_usuario_realiza INTEGER NOT NULL,
+  id_usuario_destino INTEGER NOT NULL,
+  id_tipoO INTEGER NOT NULL
 
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+);
 
 CREATE TABLE TIPO_OPERACIONES (
 
-  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   nombre VARCHAR(50) NOT NULL
 
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-/*--Muestra las tablas creadas--
-show tables;
+);
 
---Inserta los semestres--*10
-INSERT INTO semestre(nombre) VALUES('Semestre 1');
+alter table USUARIOS 
+    add constraint fk_users_countries
+    foreign key (id_pais) 
+    REFERENCES PAISES (id);
 
---Inserto los cursos en cada semestre --*50
-INSERT INTO curso(nombre, idsemestre) VALUES('Formación Integral I', 1);
+alter table USUARIOS 
+    add constraint fk_users_rols
+    foreign key (id_rol) 
+    REFERENCES ROLES (id);
 
---Agrega llaver foraneas a tabla matricula
-ALTER TABLE matricula
-  ADD CONSTRAINT matrifke
-  FOREIGN KEY (cedulaes) REFERENCES estudiante(cedula) ON DELETE CASCADE ON UPDATE CASCADE;
-  
-  
-ALTER TABLE matricula
-  ADD CONSTRAINT matrifkc
-  FOREIGN KEY (idcurso) REFERENCES curso(id) ON DELETE CASCADE ON UPDATE CASCADE;
-  */
+alter table USUARIOS 
+    add constraint fk_users_cuentas
+    foreign key (numCuenta) 
+    REFERENCES CUENTAS (numeroC);
+
+alter table CUENTAS
+    add constraint fk_cuentas_tipoC
+    foreign key (id_tipoC) 
+    REFERENCES TIPO_CUENTAS (id);
+
+alter table OPERACIONES
+    add constraint fk_operations_user1
+    foreign key (id_usuario_realiza) 
+    REFERENCES USUARIOS (id);
+
+alter table OPERACIONES
+    add constraint fk_operations_user2
+    foreign key (id_usuario_destino) 
+    REFERENCES USUARIOS (id);
+
+alter table OPERACIONES
+    add constraint fk_operations_tipoO
+    foreign key (id_tipoO) 
+    REFERENCES TIPO_OPERACIONES (id);
+
+/* inserts tipos de cuenta, roles, paises, tipos de operaciones */
+INSERT INTO TIPO_CUENTAS(nombre) VALUES('Corriente');
+INSERT INTO TIPO_CUENTAS(nombre) VALUES('De ahorro');
+
+INSERT INTO ROLES(nombre) VALUES('Administrador');
+INSERT INTO ROLES(nombre) VALUES('Cliente');
+
+INSERT INTO TIPO_OPERACIONES(nombre) VALUES('Consignacion');
+INSERT INTO TIPO_OPERACIONES(nombre) VALUES('Retiro');
+INSERT INTO TIPO_OPERACIONES(nombre) VALUES('Transferencia');
+
+INSERT INTO PAISES(nombre, moneda) VALUES('Colombia', 'Pesos');
