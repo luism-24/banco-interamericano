@@ -1,30 +1,48 @@
 <div class="col s12 center-align">
 
-    <h1>{{title}}</h1>
+        <h1>{{title}}</h1>
 
-    <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
-        <div class="row">
-            <div class="col s12 center-align">
-                <input type="text" name="name" #name="ngModel" [(ngModel)]="bancoService.myUser.name" placeholder="Ingrese su nombre">
-            </div>
-            <div class="col s12">
-                    <input type="text" name="cc" #name="ngModel" [(ngModel)]="bancoService.myUser.cc" placeholder="Ingrese su cedula">
-            </div>
-            <div class="col s12">
-                    <input type="text" name="mail" #name="ngModel" [(ngModel)]="bancoService.myUser.mail" placeholder="Ingrese su correo">
-            </div>
-            <div class="col s12">
-                    <input type="text" name="password" #name="ngModel" [(ngModel)]="bancoService.myUser.password" placeholder="Ingrese su contraseña">
-            </div>
-            <div class="col s12">
-                    <input type="text" name="confirmPassword" #name="ngModel" [(ngModel)]="bancoService.myUser.confirmPassword" placeholder="Confirme su contraseña">
-            </div>
-            <div class="col s12">
-                    <input type="text" name="addres" #name="ngModel" [(ngModel)]="bancoService.myUser.addres" placeholder="Ingrese su direccion">
-            </div>
-        
-            <a href="#" class="btn btn-danger">Registrarme</a>
-        </div>
-    </form>
+        <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
+                <div class="row">
+                        <div class="col s12 center-align">
+                                <input type="text" name="nombre" #name="ngModel" [(ngModel)]="bancoService.myUser.name"
+                                        placeholder="Ingrese su nombre">
+                        </div>
+                        <div class="col s12">
+                                <input type="text" name="id" #name="ngModel" [(ngModel)]="bancoService.myUser.id"
+                                        placeholder="Ingrese su cedula">
+                        </div>
+                        <div class="col s12">
+                                <input type="text" name="correo" #name="ngModel" [(ngModel)]="bancoService.myUser.correo"
+                                        placeholder="Ingrese su correo">
+                        </div>
+                        <div class="col s12">
+                                <input type="text" name="telefono" #name="ngModel" [(ngModel)]="bancoService.myUser.telefono"
+                                        placeholder="Ingrese su telefono">
+                        </div>
+                        <div class="col s12">
+                                <input type="password" name="contrasena" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena"
+                                        placeholder="Ingrese su contraseña">
+                        </div>
+                        <div class="col s12">
+                                <input type="text" name="codigo" #name="ngModel" [(ngModel)]="bancoService.myUser.codigo"
+                                        placeholder="ingrese en codigo">
+                        </div>
+                        <div class="col s12">
+                                <input type="text" name="id_pais" #name="ngModel" [(ngModel)]="bancoService.myUser.id_pais"
+                                        placeholder="Ingrese su pais">
+                        </div>
+                        <div class="col s12">
+                                <input type="text" name="id_rol" #name="ngModel" [(ngModel)]="bancoService.myUser.id_rol"
+                                        placeholder="Ingrese su rol">
+                        </div>
+                        <div class="col s12">
+                                <input type="text" name="numCuenta" #name="ngModel" [(ngModel)]="bancoService.myUser.numCuenta"
+                                        placeholder="Ingrese su numero de cuenta">
+                        </div>
+
+                        <a href="#" class="btn btn-danger">Registrarme</a>
+                </div>
+        </form>
 
 </div>
