@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BancoService } from '../../services/banco.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-consignment',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./consignment.component.css']
 })
 export class ConsignmentComponent implements OnInit {
+ title4 = "consignación"
 
-  constructor() { }
+ constructor(private bancoService: BancoService) { }
 
-  ngOnInit() {
-  }
+ ngOnInit() { }
+
+ registerUser(form?: NgForm){
+
+   console.log(form.value);
+   this.bancoService.register(form.value);
+   
+ }
 
 }

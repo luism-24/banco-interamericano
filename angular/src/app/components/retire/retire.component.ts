@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RetireComponent implements OnInit {
 
+  title2¿3 ="Retirar"
   constructor() { }
 
   ngOnInit() {

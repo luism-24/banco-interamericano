@@ -1,23 +1,32 @@
-<div class="col s12 center-align">
+<div class="container-fluid">
+    <div class="row head">
+        <div class="col s12 center-align">
 
-    <h1>{{title3}}</h1>
+            <h1>{{title4}}</h1>
 
-    <form #registerForm="ngForm" (ngSubmit)="consignmentterUser(consignmentForm)">
-        <div class="row">
-            <div class="col s12 center-align">
-                <input type="text" name="name" #name="ngModel" [(ngModel)]="bancoService.myUser.name" placeholder="¿Tipo de cuenta?">
-            </div>
-            <div class="col s12">
-                <input type="text" name="number" #name="ngModel" [(ngModel)]="bancoService.myUser.cc" placeholder="Digite el número de cuenta">
-            </div>
-            <div class="col s12">
-                <input type="text" name="number" #name="ngModel" [(ngModel)]="bancoService.myUser.cc" placeholder="Digite su clave">
-            </div>
-            <div class="col s12">
-                <input type="text" name="addres" #name="ngModel" [(ngModel)]="bancoService.myUser.addres" placeholder="Monto a consignar">
-            </div>
+            <form #registerForm="ngForm" (ngSubmit)="consignmentterUser(consignmentForm)">
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <input type="text" name="name" #name="ngModel" [(ngModel)]="bancoService.myUser.name"
+                            placeholder="¿Tipo de cuenta?">
+                    </div>
+                    <div class="col s12">
+                        <input type="text" name="number" #name="ngModel" [(ngModel)]="bancoService.myUser.cc"
+                            placeholder="Digite el número de cuenta">
+                    </div>
+                    <div class="col s12">
+                        <input type="text" name="number" #name="ngModel" [(ngModel)]="bancoService.myUser.cc"
+                            placeholder="Digite su clave">
+                    </div>
+                    <div class="col s12">
+                        <input type="text" name="addres" #name="ngModel" [(ngModel)]="bancoService.myUser.addres"
+                            placeholder="Monto a consignar">
+                    </div>
 
-            <a href="#" class="btn btn-danger">Consignar</a>
+                    <a href="#" class="btn btn-danger"><button style="margin-block-end:6px">Consignar</button></a>
+                </div>
+            </form>
+
         </div>
-    </form>
+    </div>
 </div>

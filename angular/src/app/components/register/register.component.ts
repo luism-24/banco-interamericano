@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BancoService } from '../../services/banco.service';
-import { NgForm } from '@angular/forms';
+import { NgForm } from '@angular/form';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class BancoComponent implements OnInit {
 
-  title = 'Registro';
+  title2 = 'Registro';
 
   constructor(private bancoService: BancoService) { }
 
