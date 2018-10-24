@@ -1,39 +1,18 @@
-<div class="container-fluid">
-    <div class="row head">
-        <div class="col s12 " style="background-color: rgb(137, 164, 253)">
-            <h1>Sucursal virtual</h1>
+<div class="row center-align">
+    <div class="col s2">
+        <ul>
+            <li><a href="/consignacion">Consignacion</a></li>
+            <li><a href="/retiro">Retiro</a></li>
+            <li><a href="/transferencia">Transferencia</a></li>
+        </ul>
+        <br>
+        <div class="row">
+            <a href="#" class="waves-effect waves-light btn">Cerrar sesion</a>
         </div>
     </div>
-    <div class="row center-align">
-        <div class="col s2" style="height: 630px; background-color:rgb(243, 179, 179)">
-            <div aria-setsize="600px">
-                <nav>
-                    <div class="row center-align">
-                        <ul>
-                            <li>
-                                <div class="user-view">
-                                    <div class="background">
-                                        <img src="./public/img/descarga.png">
-                                    </div>
-                                    <a href="#"><img class="circle" src="./public/img/descarga.png"></a>
-                                    <a href="/consignacion"><span class="white-text name">Consignaciones</span></a>
-                                    <a href="/retiro"><span class="white-text name">Retiros</span></a>
-                                    <a href="/transferencia"><span class="white-text name">Transferencias</span></a>
-                                    <a href=""><span class="white-text name">Movimientos bancarios</span></a>
-                                    <br>
-                                    <a href="#"><span class="white-text name">Cerrar sesión</span></a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <div class=" col s2"></div>
-        <div class="col s4 row center-align " style=" right: 100px; background-color:rgb(255, 255, 255) ">
-            <FONT FACE='romans'>
-                <router-outlet></router-outlet>
-            </FONT> 
-        </div>
+    <div class="col s9 center-align" style=" right: 100px; background-color:rgb(255, 255, 255) ">
+        <FONT FACE='romans'>
+            <router-outlet></router-outlet>
+        </FONT>
     </div>
 </div>
