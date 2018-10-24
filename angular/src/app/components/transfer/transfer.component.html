@@ -6,19 +6,22 @@
     <div class="row">
 
       <div class="col s12">
-        <input type="text" name="numCuenta" #name="ngModel" [(ngModel)]="bancoService.myUser.numCuenta" placeholder="ingrese el numero de la cuenta">
+        <input type="text" name="numCuenta" #name="ngModel" [(ngModel)]="bancoService.myUser.numCuenta" placeholder="Digite el numero de la cuenta">
       </div>
       <div class="col s12">
-        <input type="text" name="valorTransferencia" #name="ngModel" [(ngModel)]="bancoService.myUser.valorTransferencia" placeholder="ingrese el valor de la transferencia">
+        <input type="text" name="valorTransferencia" #name="ngModel" [(ngModel)]="bancoService.myUser.valorTransferencia" placeholder="Digite el valor de la transferencia">
       </div>
+      <div class="col s12">
+          <input type="text" name="clave" #name="ngModel" [(ngModel)]="bancoService.myUser.clave" placeholder="Digite la clave">
+        </div>
     </div>
 
     <div class="row">
       <div class="col s6">
-        <a href="" class="waves-effect waves-light btn">TRANSFERIR</a>
+        <a href="" class="waves-effect waves-light btn">Transferir</a>
       </div>
       <div class="col s5">
-        <a href="" class="waves-effect waves-light btn">CANCELAR</a>
+        <a href="" class="waves-effect waves-light btn">Cancelar</a>
       </div>
 
     </div>
