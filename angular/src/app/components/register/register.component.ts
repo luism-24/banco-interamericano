@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BancoService } from '../../services/banco.service';
-import { NgForm } from '@angular/form';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +8,7 @@ import { NgForm } from '@angular/form';
   styleUrls: ['./register.component.css'],
   providers: [ BancoService ]
 })
-export class BancoComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   
 

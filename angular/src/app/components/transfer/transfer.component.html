@@ -1,6 +1,6 @@
 <div class="col s12 center-align">
 
-  <h1>TRANSFERENCIA</h1>
+  <h5>TRANSFERENCIA</h5>
 
   <form #registerForm="ngForm" (ngSubmit)="retireUser(registerForm)">
     <div class="row">
@@ -9,21 +9,20 @@
         <input type="text" name="numCuenta" #name="ngModel" [(ngModel)]="bancoService.myUser.numCuenta" placeholder="ingrese el numero de la cuenta">
       </div>
       <div class="col s12">
-        <input type="text" name="valorTransferencia" #name="ngModel" [(ngModel)]="bancoService.myUser.valorTransferencia"
-          placeholder="ingrese el valor de la transferencia">
-      </div>
-
-
-      <div class="col s12">
-        <div class="col s3">
-        <a href="#" class="btn btn-danger">TRANSFERIR</a>
-        </div>
-        <div class="col s9">
-            <a href="#" class="btn btn-danger">TRANSFERIR</a>
-            </div>
-        
+        <input type="text" name="valorTransferencia" #name="ngModel" [(ngModel)]="bancoService.myUser.valorTransferencia" placeholder="ingrese el valor de la transferencia">
       </div>
     </div>
+
+    <div class="row">
+      <div class="col s6">
+        <a href="" class="waves-effect waves-light btn">TRANSFERIR</a>
+      </div>
+      <div class="col s5">
+        <a href="" class="waves-effect waves-light btn">CANCELAR</a>
+      </div>
+
+    </div>
+
   </form>
 
 </div>

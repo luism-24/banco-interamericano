@@ -6,7 +6,7 @@ import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BancoComponent } from './components/register/register.component';
+import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { ConsignmentComponent } from './components/consignment/consignment.component';
@@ -15,7 +15,7 @@ import { RetireComponent } from './components/retire/retire.component';
 @NgModule({
   declarations: [
     AppComponent,
-    BancoComponent,
+    RegisterComponent,
     LoginComponent,
     TransferComponent,
     ConsignmentComponent,

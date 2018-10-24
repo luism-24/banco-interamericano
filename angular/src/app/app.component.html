@@ -16,10 +16,10 @@
                                         <img src="./public/img/descarga.png">
                                     </div>
                                     <a href="#"><img class="circle" src="./public/img/descarga.png"></a>
-                                    <a href="#"><span class="white-text name">Consignaciones</span></a>
-                                    <a href="#"><span class="white-text name">Retiros</span></a>
-                                    <a href="#"><span class="white-text name">Transferencias</span></a>
-                                    <a href="#"><span class="white-text name">Movimientos bancarios</span></a>
+                                    <a href="/consignacion"><span class="white-text name">Consignaciones</span></a>
+                                    <a href="/retiro"><span class="white-text name">Retiros</span></a>
+                                    <a href="/transferencia"><span class="white-text name">Transferencias</span></a>
+                                    <a href=""><span class="white-text name">Movimientos bancarios</span></a>
                                     <br>
                                     <a href="#"><span class="white-text name">Cerrar sesión</span></a>
                                 </div>
@@ -32,11 +32,8 @@
         <div class=" col s2"></div>
         <div class="col s4 row center-align " style=" right: 100px; background-color:rgb(255, 255, 255) ">
             <FONT FACE='romans'>
-                    <app-login></app-login>
-                <app-consignment></app-consignment>
-                <app-register></app-register>
-              
-            </FONT>
+                <router-outlet></router-outlet>
+            </FONT> 
         </div>
     </div>
 </div>
