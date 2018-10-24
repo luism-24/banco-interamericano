@@ -1,18 +1,27 @@
 <div class="row center-align">
     <div class="col s2">
+
+
         <ul>
-            <li><a href="/consignacion">Consignacion</a></li>
-            <li><a href="/retiro">Retiro</a></li>
-            <li><a href="/transferencia">Transferencia</a></li>
+            <li class="left-align"><a href="/consignacion">Consignacion</a></li>
+            <li class="left-align"><a href="/retiro">Retiro</a></li>
+            <li class="left-align"><a href="/transferencia">Transferencia</a></li>
         </ul>
+
         <br>
         <div class="row">
             <a href="#" class="waves-effect waves-light btn">Cerrar sesion</a>
         </div>
     </div>
-    <div class="col s9 center-align" style=" right: 100px; background-color:rgb(255, 255, 255) ">
+
+    <div class="col s9 m6 center-align; z-depth-5" style=" right: 100px; background-color:rgb(255, 255, 255) ">
+      
         <FONT FACE='romans'>
-            <router-outlet></router-outlet>
+            <div class="container">
+                <app-register></app-register>
+            </div>
         </FONT>
+        
     </div>
+
 </div>
