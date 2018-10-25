@@ -12,6 +12,7 @@ import { TransferComponent } from './components/transfer/transfer.component';
 import { ConsignmentComponent } from './components/consignment/consignment.component';
 import { RetireComponent } from './components/retire/retire.component';
 import { HomeComponent } from './components/home/home.component';
+import { MovimientosComponent } from './components/movimientos/movimientos.component';
 
 
 
@@ -23,6 +24,7 @@ import { HomeComponent } from './components/home/home.component';
     TransferComponent,
     ConsignmentComponent,
     RetireComponent,
+    MovimientosComponent,
   ],
   imports: [
     BrowserModule,

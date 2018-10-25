@@ -3,16 +3,15 @@ import { BancoService } from '../../services/banco.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
-  providers: [BancoService]
+  selector: 'app-movimientos',
+  templateUrl: './movimientos.component.html',
+  styleUrls: ['./movimientos.component.css']
 })
-export class HomeComponent implements OnInit {
+export class MovimientosComponent implements OnInit {
 
   constructor(private bancoService: BancoService) { }
 
-  ngOnInit(form?: NgForm) {
+  ngOnInit() {
   }
 
 }

@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     console.log(form.value);
     this.bancoService.login(form.value)
       .subscribe(res => {
-        M.toast({ html: "Usuario logeado" });
+        M.toast({ html: "" });
       });
   }
 
