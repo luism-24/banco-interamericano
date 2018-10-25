@@ -6,18 +6,33 @@
 
             <form #registerForm="ngForm" (ngSubmit)="consignmentterUser(consignmentForm)">
                 <div class="row">
+                        <div class="input-field  col s1">
+           
+                                <i class="material-icons prefix">attach_money</i>
+                                
+                              </div>
+                            <div class="input-field  col s3">
+                                <h6  for="saldo">Su saldo es: </h6>
+                            </div>
                     <div class="col s12 center-align">
                         <input type="text" name="name" #name="ngModel" [(ngModel)]="bancoService.myUser.name" placeholder="¿Tipo de cuenta?">
                     </div>
-                    <div class="col s12">
-                        <input type="text" name="number" #name="ngModel" [(ngModel)]="bancoService.myUser.cc" placeholder="Digite el número de cuenta">
-                    </div>
-                    <div class="col s12">
-                        <input type="text" name="number" #name="ngModel" [(ngModel)]="bancoService.myUser.addres" placeholder="Monto a consignar">
-                    </div>
-                    <div class="col s12">
-                        <input type="text" name="addres" #name="ngModel" [(ngModel)]="bancoService.myUser.clave" placeholder="Digite su clave">
-                    </div>
+                    <div class="input-field  col s12">
+                            <i class="material-icons prefix">credit_card</i>
+                            <input type="number" name="valorTransferencia" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
+                            <label for="number">Digite el numero de la cuenta</label>
+                          </div>
+                    <div class="input-field  col s12">
+                            <i class="material-icons prefix">keyboard_capslock</i>
+                            <input type="number" name="valorTransferencia" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
+                            <label for="number">Monto a consignar</label>
+                          </div>
+                    <div class="input-field  col s12">
+                            <i class="material-icons prefix">https</i>
+                  
+                            <input type="password" name="clave" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
+                            <label for="password">Digite la clave</label>
+                          </div>
                 </div>
                 <div class="row">
                     <a href="" class="waves-effect waves-light btn">Consignar</a>

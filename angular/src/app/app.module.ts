@@ -12,6 +12,7 @@ import { TransferComponent } from './components/transfer/transfer.component';
 import { ConsignmentComponent } from './components/consignment/consignment.component';
 import { RetireComponent } from './components/retire/retire.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { RetireComponent } from './components/retire/retire.component';
     TransferComponent,
     ConsignmentComponent,
     RetireComponent,
+
   ],
   imports: [
     BrowserModule,

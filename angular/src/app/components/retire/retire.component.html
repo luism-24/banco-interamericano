@@ -5,18 +5,24 @@
   <form #registerForm="ngForm" (ngSubmit)="retireUser(registerForm)">
     <div class="row">
 
-      <div class="col s12">
-        <input type="text" name="saldo" #name="ngModel" [(ngModel)]="bancoService.myUser.saldo"
-          placeholder="su saldo es">
-      </div>
-      <div class="col s12">
-        <input type="text" name="retirarSaldo" #name="ngModel" [(ngModel)]="bancoService.myUser.retirarSaldo"
-          placeholder="Ingrese la cantidad la cual desea retirar">
-      </div>
-      <div class="col s12">
-          <input type="text" name="clave" #name="ngModel" [(ngModel)]="bancoService.myUser.clave"
-            placeholder="Digite la clave">
+        <div class="input-field  col s1">
+           
+          <i class="material-icons prefix">attach_money</i>
+          
         </div>
+      <div class="input-field  col s3">
+          <h6  for="saldo">Su saldo es: </h6>
+      </div>
+      <div class="input-field  col s12">
+        <i class="material-icons prefix">grid_on</i>
+        <input type="number" name="retirarSaldo" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
+        <label for="password">Ingrese la cantidad que desea retirar</label>
+      </div>
+      <div class="input-field  col s12">
+        <i class="material-icons prefix">https</i>
+        <input type="password" name="clave" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
+        <label for="password">Digite la clave</label>
+      </div>
     </div>
     <div class="row">
       <a href="" class="waves-effect waves-light btn">Retirar</a>

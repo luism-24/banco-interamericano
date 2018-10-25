@@ -5,46 +5,49 @@
         <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
                 <div class="row">
                         <div class="input-field  col s6 center-align">
-                                <i  class="material-icons prefix">account_circle</i>
+                                <i class="material-icons prefix">account_circle</i>
                                 <input type="text" id="icon_prefix" name="nombre" #name="ngModel" [(ngModel)]="bancoService.myUser.name">
                                 <label for="icon_prefix">Nombre</label>
                         </div>
 
                         <div class="input-field  col s6  center-align">
-                                        <i class="material-icons prefix">call_to_action</i>
+                                <i class="material-icons prefix">call_to_action</i>
                                 <input type="text" name="id" #name="ngModel" [(ngModel)]="bancoService.myUser.id">
                                 <label for="id">Cedula</label>
                         </div>
                         <div class="input-field  col s6  center-align">
-                                        <i class="material-icons prefix">phone_android</i>
+                                <i class="material-icons prefix">phone_android</i>
                                 <input type="text" name="telefono" #name="ngModel" [(ngModel)]="bancoService.myUser.telefono">
                                 <label for="telefono">Telefono</label>
                         </div>
                         <div class="input-field  col s6 ">
-                                        <i class="material-icons prefix">place</i>
+                                <i class="material-icons prefix">place</i>
                                 <input type="text" name="id_pais" #name="ngModel" [(ngModel)]="bancoService.myUser.id_pais">
                                 <label for="id_pais">Pais</label>
                         </div>
                         <div class="input-field  col s12">
-                                        <i class="material-icons prefix">email</i>
+                                <i class="material-icons prefix">email</i>
                                 <input type="email" name="correo" #name="ngModel" [(ngModel)]="bancoService.myUser.correo">
                                 <label for="email">Correo</label>
                         </div>
 
                         <div class="input-field  col s12">
-                                        <i class="material-icons prefix">https</i>
+                                <i class="material-icons prefix">https</i>
                                 <input type="password" name="contrasena" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
                                 <label for="password">Contraseña</label>
                         </div>
                         <div class="input-field  col s12">
-                                        <i class="material-icons prefix">
-                                                        confirmation_number</i>
+                                <i class="material-icons prefix">
+                                        confirmation_number</i>
                                 <input type="text" name="numCuenta" #name="ngModel" [(ngModel)]="bancoService.myUser.numCuenta">
                                 <label for="numCuenta">Numero de cuenta</label>
                         </div>
 
-                       
-                        <a href=""  class=" waves-effect waves-light btn">Registrarme</a>
+                        <div>
+                                <a class="btn dropdown" href="" data-target="dropdown2">
+                                        maldito boton<i class="material-icons right">arrow_drop_down</i></a>
+                        </div>
+                        <a href="" class=" waves-effect waves-light btn">Registrarme</a>
                 </div>
         </form>
 
