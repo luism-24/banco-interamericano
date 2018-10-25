@@ -5,14 +5,21 @@
   <form #registerForm="ngForm" (ngSubmit)="retireUser(registerForm)">
     <div class="row">
 
-      <div class="col s12">
-        <input type="text" name="numCuenta" #name="ngModel" [(ngModel)]="bancoService.myUser.numCuenta" placeholder="Digite el numero de la cuenta">
-      </div>
-      <div class="col s12">
-        <input type="text" name="valorTransferencia" #name="ngModel" [(ngModel)]="bancoService.myUser.valorTransferencia" placeholder="Digite el valor de la transferencia">
-      </div>
-      <div class="col s12">
-          <input type="text" name="clave" #name="ngModel" [(ngModel)]="bancoService.myUser.clave" placeholder="Digite la clave">
+
+      <div class="input-field  col s12">
+          <i class="material-icons prefix">credit_card</i>
+          <input type="number" name="numeroCuenta" #name="ngModel" [(ngModel)]="bancoService.myUser.numeroCuenta">
+          <label for="number">Digite el número de la cuenta</label>
+        </div>
+      <div class="input-field  col s12">
+          <i class="material-icons prefix">attach_money</i>
+          <input type="number" name="valorTransferencia" #name="ngModel" [(ngModel)]="bancoService.myUser.valorTransferencia">
+          <label for="number">Digite el valor de la transferencia</label>
+        </div>
+      <div class="input-field  col s12">
+          <i class="material-icons prefix">https</i>
+          <input type="password" name="clave" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
+          <label for="password">Digite la clave</label>
         </div>
     </div>
 

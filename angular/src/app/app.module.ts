@@ -11,6 +11,8 @@ import { LoginComponent } from './components/login/login.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { ConsignmentComponent } from './components/consignment/consignment.component';
 import { RetireComponent } from './components/retire/retire.component';
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { RetireComponent } from './components/retire/retire.component';
     TransferComponent,
     ConsignmentComponent,
     RetireComponent,
+    HomeComponent,
+   
   ],
   imports: [
     BrowserModule,
