@@ -1,18 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { BancoService } from '../../services/banco.service';
+import { NgForm } from '@angular/forms';
+declare var M: any;
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [ BancoService ]
+  providers: [BancoService]
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bancoService: BancoService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
- 
+  loginUser(form?: NgForm) {
+    console.log(form.value);
+    this.bancoService.login(form.value)
+      .subscribe(res => {
+        M.toast({ html: "Usuario logeado" });
+      });
+  }
+
+
 
 }

@@ -21,9 +21,11 @@ controll.registre = (req, res) => {
     var numCuenta = req.body.numCuenta;*/
 
     console.log(req.body);
+    console.log('Hola');
+    
 
     res.send('Registro de usuarios');
-    /////////////////Se toma el numero ingresado si se registra correctamente//////////////
+    /*////////////////Se toma el numero ingresado si se registra correctamente//////////////
     var numero = '3187934956';
     var codigo = aleatorio(1000, 9000);
 
@@ -36,13 +38,14 @@ controll.registre = (req, res) => {
                 console.dir(responseData);
             }
         }
-    );
+    );*/
     ///////////////////////////////////////////////////////////
 }
 
 controll.login = (req, res) => {
 
-    res.send('Ingreso de usuarios');
+    console.log(req.body);
+    
 
 }
 

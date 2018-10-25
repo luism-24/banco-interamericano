@@ -4,16 +4,10 @@
 
         <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
                 <div class="row">
-                        <div class="input-field  col s6 center-align">
+                        <div class="input-field  col s12 center-align">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input type="text" id="icon_prefix" name="nombre" #name="ngModel" [(ngModel)]="bancoService.myUser.name">
+                                <input type="text" id="icon_prefix" name="nombre" #name="ngModel" [(ngModel)]="bancoService.myUser.nombre">
                                 <label for="icon_prefix">Nombre</label>
-                        </div>
-
-                        <div class="input-field  col s6  center-align">
-                                <i class="material-icons prefix">call_to_action</i>
-                                <input type="text" name="id" #name="ngModel" [(ngModel)]="bancoService.myUser.id">
-                                <label for="id">Cedula</label>
                         </div>
                         <div class="input-field  col s6  center-align">
                                 <i class="material-icons prefix">phone_android</i>
@@ -47,7 +41,7 @@
                                 <a class="btn dropdown" href="" data-target="dropdown2">
                                         maldito boton<i class="material-icons right">arrow_drop_down</i></a>
                         </div>
-                        <a href="" class=" waves-effect waves-light btn">Registrarme</a>
+                        <button href="" class=" waves-effect waves-light btn">Registrarme</button>
                 </div>
         </form>
 

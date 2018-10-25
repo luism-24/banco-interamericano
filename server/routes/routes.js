@@ -8,7 +8,7 @@ const controller = require('../controller/controller');
 
 router.get('/', (req, res) => {
 
-    conec.query('SELECT * FROM tipo_operaciones', (err, data) => {
+    conec.query('SELECT * FROM usuarios', (err, data) => {
 
         if (err) {
             console.log(err);
