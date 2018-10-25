@@ -14,6 +14,7 @@ import { RetireComponent } from './components/retire/retire.component';
 import { HomeComponent } from './components/home/home.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,8 +23,6 @@ import { HomeComponent } from './components/home/home.component';
     TransferComponent,
     ConsignmentComponent,
     RetireComponent,
-    HomeComponent,
-   
   ],
   imports: [
     BrowserModule,

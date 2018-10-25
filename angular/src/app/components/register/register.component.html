@@ -1,6 +1,6 @@
 <div class="col s12 center-align">
 
-        <h5>Registro</h5>
+        <h5>REGISTRO</h5>
 
         <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
                 <div class="row">
@@ -12,17 +12,17 @@
 
                         <div class="input-field  col s6  center-align">
                                 <i class="material-icons prefix">call_to_action</i>
-                                <input type="number" name="id" #name="ngModel" [(ngModel)]="bancoService.myUser.id">
+                                <input type="text" name="id" #name="ngModel" [(ngModel)]="bancoService.myUser.id">
                                 <label for="id">Cedula</label>
                         </div>
                         <div class="input-field  col s6  center-align">
                                 <i class="material-icons prefix">phone_android</i>
-                                <input type="tel" name="telefono" #name="ngModel" [(ngModel)]="bancoService.myUser.telefono">
+                                <input type="text" name="telefono" #name="ngModel" [(ngModel)]="bancoService.myUser.telefono">
                                 <label for="telefono">Telefono</label>
                         </div>
                         <div class="input-field  col s6 ">
                                 <i class="material-icons prefix">place</i>
-                                <input type="number" name="id_pais" #name="ngModel" [(ngModel)]="bancoService.myUser.id_pais">
+                                <input type="text" name="id_pais" #name="ngModel" [(ngModel)]="bancoService.myUser.id_pais">
                                 <label for="id_pais">Pais</label>
                         </div>
                         <div class="input-field  col s12">
@@ -37,13 +37,10 @@
                                 <label for="password">Contraseña</label>
                         </div>
                         <div class="input-field  col s12">
-                                <i class="material-icons prefix">
-                                        confirmation_number</i>
-                                <input type="number" name="numCuenta" #name="ngModel" [(ngModel)]="bancoService.myUser.numCuenta">
+                                <i class="material-icons prefix">confirmation_number</i>
+                                <input type="text" name="numCuenta" #name="ngModel" [(ngModel)]="bancoService.myUser.numCuenta">
                                 <label for="numCuenta">Numero de cuenta</label>
                         </div>
-
-
                         <a href="" class=" waves-effect waves-light btn">Registrarme</a>
                 </div>
         </form>
