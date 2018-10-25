@@ -8,14 +8,19 @@ import { User } from '../models/user';
 export class BancoService {
   myUser: User;
 
-  readonly URL_API = 'http://localhost:3000/banco-interamericano/registro';
+  readonly URL_API = 'http://localhost:4000/banco-interamericano';
 
   constructor(private http: HttpClient) {
     this.myUser = new User();
   }
 
-  register(user: User) {
-    return this.http.post(this.URL_API, user);
+  register(user: User) {  
+    return this.http.post(this.URL_API+"/registro", user);
+  }
+  login(crendentials){
+    
+    return this.http.post(this.URL_API+"/login", crendentials)
+
   }
 
 
