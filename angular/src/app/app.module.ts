@@ -11,7 +11,8 @@ import { LoginComponent } from './components/login/login.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { ConsignmentComponent } from './components/consignment/consignment.component';
 import { RetireComponent } from './components/retire/retire.component';
-import { AccountComponent } from './components/account/account.component';
+import { HomeComponent } from './components/home/home.component';
+
 
 
 @NgModule({
@@ -22,8 +23,6 @@ import { AccountComponent } from './components/account/account.component';
     TransferComponent,
     ConsignmentComponent,
     RetireComponent,
-    AccountComponent,
-
   ],
   imports: [
     BrowserModule,

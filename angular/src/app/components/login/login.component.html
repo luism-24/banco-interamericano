@@ -1,8 +1,8 @@
 <div class="col s12 center-align">
 
-    <h5>Ingresar</h5>
+    <h5>INGRESAR</h5>
 
-    <form #registerForm="ngForm" (ngSubmit)="loginUser(loginForm)">
+    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
         <div class="row">
                 <div class="input-field  col s12 center-align">
                         <i  class="material-icons prefix">account_circle</i>
@@ -11,16 +11,20 @@
                 </div>
             <div class="input-field  col s12">
                     <i class="material-icons prefix">https</i>
-          
                     <input type="password" name="clave" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
                     <label for="password">Digite su contraseña</label>
                   </div>
+                  <div class="input-field  col s12">
+                    <i class="material-icons prefix">fiber_pin</i>
+                    <input type="password" name="codigo" #name="ngModel" [(ngModel)]="bancoService.myUser.codigo">
+                    <label for="password">Digite su codigo</label>
+                  </div>
             <div class="row">
                 <div class="col s6">
-                    <a href="" class="waves-effect waves-light btn">Ingresar</a>
+                    <button class="waves-effect waves-light btn">Ingresar</button>
                 </div>
                 <div class="col s5">
-                    <a href="" class="waves-effect waves-light btn">Registrarme</a>
+                    <button href="#" class="waves-effect waves-light btn">Registrarme</button>
                 </div>
 
             </div>

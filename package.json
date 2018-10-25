@@ -26,7 +26,8 @@
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
     "nexmo": "^2.4.0",
-    "pg": "^7.5.0"
+    "pg": "^7.5.0",
+    "pgpass": "^1.0.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
