@@ -12,4 +12,10 @@
 .component{
     text-align: center;
 }
+.waves-effect{
+    background-color: rgb(74, 170, 125);
+  }
+  .a{
+      color:red;
+  }
 
