@@ -8,16 +8,14 @@ const controller = require('../controller/controller');
 
 router.get('/', (req, res) => {
 
-    conec.query('SELECT * FROM usuarios', (err, data) => {
+    conec.query('SELECT * FROM paises', (err, paises) => {
 
         if (err) {
             console.log(err);
 
         } else {
 
-            res.json({
-                data: data.rows
-            });
+            res.json(paises.rows);
 
         }
 

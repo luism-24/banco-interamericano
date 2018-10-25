@@ -15,9 +15,10 @@
                                 <label for="telefono">Telefono</label>
                         </div>
                         <div class="input-field  col s6 ">
-                                <i class="material-icons prefix">place</i>
-                                <input type="text" name="id_pais" #name="ngModel" [(ngModel)]="bancoService.myUser.id_pais">
-                                <label for="id_pais">Pais</label>
+                                <select name="id_pais" class="browser-default">
+                                        <option value="" disabled selected>Pais de residencia</option>
+                                        <option value="1">hi</option>
+                                </select>
                         </div>
                         <div class="input-field  col s12">
                                 <i class="material-icons prefix">email</i>
@@ -35,8 +36,20 @@
                                 <input type="text" name="numCuenta" #name="ngModel" [(ngModel)]="bancoService.myUser.numCuenta">
                                 <label for="numCuenta">Numero de cuenta</label>
                         </div>
-                        <a href="" class=" waves-effect waves-light btn">Registrarme</a>
+                        <div class="col s12">
+                                <button href="" class=" waves-effect waves-light btn">Registrarme</button>
+                        </div>
                 </div>
         </form>
 
+
 </div>
+
+
+<script>
+        $(document).ready(function () {
+
+                console.log('hh');
+
+        });
+</script>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BancoService } from '../../services/banco.service';
 import { NgForm } from '@angular/forms';
-import { User } from '../../models/user';
+import { Pais} from '../../models/pais';
 declare var M: any;
 
 @Component({
@@ -16,7 +16,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(private bancoService: BancoService) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.paises();
+  }
 
   registerUser(form?: NgForm) {
 
@@ -26,7 +28,16 @@ export class RegisterComponent implements OnInit {
       M.toast({ html: "Usuario " + form.value.nombre + " regitrado" });  
     });
     
+  }
 
+  paises(){
+    this.bancoService.getPaises()
+    .subscribe(res => {
+      this.bancoService.paises = res as Pais[];
+    });
+
+    console.log();
+    
   }
 
 
