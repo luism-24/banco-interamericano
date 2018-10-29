@@ -1,36 +1,11 @@
+<app-header></app-header>
 <div class="row center-align">
-    <br>
-    <div class="col s2 side-nav">
-        <ul>
-            <br>
-            <br>
-            <br>
-            <li><a href="/retiro">Retiro</a></li>
-            <br>
-            <br>
-            <li><a href="/consignacion">Consignación</a></li>
-            <br>
-            <br>
-            <li><a href="/transferencia">Transferencia</a></li>
-            <br>
-            <br>
-            <li><a href="/registro">Movimientos bancarios</a></li>
-        </ul>
-        <br>
-        <br>
-        <br>
-        <div class="row">
-            <a href="#" class="waves-effect waves-light btn">Cerrar sesion</a>
-        </div>
-    </div>
-    <br> 
-    <br>
-    <div class="col s1"></div>
+    <app-side-nav></app-side-nav>
     <div class="col s9 m7 center-align; z-depth-4" style=" right: 100px; background-color:rgb(255, 255, 255) ">
 
         <FONT FACE='Calibri'>
-            <div class="container">   
-            <router-outlet></router-outlet>
+            <div class="container">
+                <router-outlet></router-outlet>
             </div>
         </FONT>
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BancoService } from '../../services/banco.service';
+import { BancoService } from '../../../services/banco.service';
 import { NgForm } from '@angular/forms';
 declare var M: any;
 

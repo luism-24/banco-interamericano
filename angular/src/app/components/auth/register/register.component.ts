@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BancoService } from '../../services/banco.service';
+import { BancoService } from '../../../services/banco.service';
 import { NgForm } from '@angular/forms';
-import { Pais} from '../../models/pais';
+import { Pais} from '../../../models/pais';
 declare var M: any;
 
 @Component({
