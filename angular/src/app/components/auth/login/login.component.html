@@ -6,17 +6,17 @@
         <div class="row">
                 <div class="input-field  col s12 center-align">
                         <i  class="material-icons prefix">account_circle</i>
-                        <input type="text" id="icon_prefix" name="nombre" #name="ngModel" [(ngModel)]="bancoService.myUser.name">
+                        <input type="text" id="icon_prefix" name="nombre" #nombre="ngModel" [(ngModel)]="bancoService.credencial.nombre">
                         <label for="icon_prefix">Digite su usuario</label>
                 </div>
             <div class="input-field  col s12">
                     <i class="material-icons prefix">https</i>
-                    <input type="password" name="clave" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
+                    <input type="password" name="contrasena" #contrasena="ngModel" [(ngModel)]="bancoService.credencial.contrasena">
                     <label for="password">Digite su contraseña</label>
                   </div>
                   <div class="input-field  col s12">
                     <i class="material-icons prefix">fiber_pin</i>
-                    <input type="password" name="codigo" #name="ngModel" [(ngModel)]="bancoService.myUser.codigo">
+                    <input type="password" name="codigo" #codigo="ngModel" [(ngModel)]="bancoService.credencial.codigo">
                     <label for="password">Digite su codigo</label>
                   </div>
             <div class="row">
