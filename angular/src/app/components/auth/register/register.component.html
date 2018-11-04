@@ -17,7 +17,7 @@
                         <div class="input-field  col s6 ">
                                 <select name="id_pais" class="browser-default">
                                         <option value="" disabled selected>Pais de residencia</option>
-                                        <option value="1">hi</option>
+                                        <option *ngFor="let pais of bancoService.paises; let i = index;" value={{i}}>{{pais.nombre}}</option>
                                 </select>
                         </div>
                         <div class="input-field  col s12">
@@ -44,12 +44,3 @@
 
 
 </div>
-
-
-<script>
-        $(document).ready(function () {
-
-                console.log('hh');
-
-        });
-</script>

@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 
         } else {
 
-            res.json(paises.rows);
+            res.send(paises.rows);
 
         }
 

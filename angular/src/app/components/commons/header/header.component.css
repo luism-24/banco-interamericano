@@ -4,12 +4,17 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 60px;
+    height: 80px;
     background:rgb(74, 170, 125);
 }
+
+.title, .row{
+    padding-top: 10px;
+}
+
 .title-text{
     margin:0;
-    padding-left: 10px;
+    padding-left: 80px;
     color: white;
     font-size: 40px;
 }

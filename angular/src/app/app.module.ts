@@ -29,6 +29,7 @@ import { SideNavComponent } from './components/commons/side-nav/side-nav.compone
     MovimientosComponent,
     HeaderComponent,
     SideNavComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

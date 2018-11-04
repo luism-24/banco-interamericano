@@ -7,28 +7,28 @@
 
 
       <div class="input-field  col s12">
-          <i class="material-icons prefix">credit_card</i>
-          <input type="number" name="valorTransferencia" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
-          <label for="number">Digite el numero de la cuenta</label>
-        </div>
+        <i class="material-icons prefix">credit_card</i>
+        <input type="number" name="valorTransferencia" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
+        <label for="number">Digite el numero de la cuenta</label>
+      </div>
       <div class="input-field  col s12">
-          <i class="material-icons prefix">import_export</i>
-          <input type="number" name="valorTransferencia" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
-          <label for="number">Digite el valor de la transferencia</label>
-        </div>
+        <i class="material-icons prefix">import_export</i>
+        <input type="number" name="valorTransferencia" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
+        <label for="number">Digite el valor de la transferencia</label>
+      </div>
       <div class="input-field  col s12">
-          <i class="material-icons prefix">https</i>
-          <input type="password" name="clave" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
-          <label for="password">Digite la clave</label>
-        </div>
+        <i class="material-icons prefix">https</i>
+        <input type="password" name="clave" #name="ngModel" [(ngModel)]="bancoService.myUser.contrasena">
+        <label for="password">Digite la clave</label>
+      </div>
     </div>
 
     <div class="row">
       <div class="col s6">
-        <a href="" class="waves-effect waves-light btn">Transferir</a>
+        <a routerLink="#" class="waves-effect waves-light btn">Transferir</a>
       </div>
       <div class="col s5">
-        <a href="" class="waves-effect waves-light btn">Cancelar</a>
+        <a routerLink="login" class="waves-effect waves-light btn">Cancelar</a>
       </div>
 
     </div>

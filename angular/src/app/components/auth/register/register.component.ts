@@ -35,9 +35,6 @@ export class RegisterComponent implements OnInit {
     .subscribe(res => {
       this.bancoService.paises = res as Pais[];
     });
-
-    console.log();
-    
   }
 
 
