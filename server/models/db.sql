@@ -51,7 +51,6 @@ CREATE TABLE OPERACIONES (
   id_usuario_realiza INTEGER NOT NULL,
   id_usuario_destino INTEGER NOT NULL,
   id_tipoO INTEGER NOT NULL
-
 );
 
 CREATE TABLE TIPO_OPERACIONES (

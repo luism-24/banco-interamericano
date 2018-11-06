@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
 import { HeaderComponent } from './components/commons/header/header.component';
 import { SideNavComponent } from './components/commons/side-nav/side-nav.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 
@@ -29,7 +30,8 @@ import { SideNavComponent } from './components/commons/side-nav/side-nav.compone
     MovimientosComponent,
     HeaderComponent,
     SideNavComponent,
-    HomeComponent
+    HomeComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

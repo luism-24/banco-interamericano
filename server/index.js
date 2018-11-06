@@ -10,7 +10,7 @@ app.set('port', process.env.PORT || 4000);
 app.use(morgan('dev'));
 app.use(cors({ origin: 'http://localhost:4200' }));
 app.use(express.json());
-
+require('dotenv').config();
 app.use(express.urlencoded({ extended: false }));
 
 // Routes

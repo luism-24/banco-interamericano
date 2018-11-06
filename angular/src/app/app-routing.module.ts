@@ -8,6 +8,7 @@ import { TransferComponent } from './components/transfer/transfer.component';
 import { ConsignmentComponent } from './components/consignment/consignment.component';
 import { HomeComponent } from './components/home/home.component';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'retiro', component: RetireComponent },
   { path: 'consignacion', component: ConsignmentComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'movimientos', component: MovimientosComponent }
+  { path: 'movimientos', component: MovimientosComponent }, 
+  { path: 'admin', component: AdminComponent}
 ];
 
 @NgModule({
