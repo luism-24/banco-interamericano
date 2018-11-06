@@ -11,12 +11,14 @@ export class BancoService {
   myUser: User;
   paises: Pais[];
   credencial: Credencial;
+  logeado: boolean;
 
   readonly URL_API = 'http://localhost:4000/banco-interamericano';
 
   constructor(private http: HttpClient) {
     this.myUser = new User();
     this.credencial = new Credencial();
+    this.isLogged();
   }
 
   register(user: User) {  
@@ -30,6 +32,10 @@ export class BancoService {
 
     return this.http.post(this.URL_API+"/login", crendential);
 
+  }
+
+  isLogged(){
+    return this.http.get(this.URL_API+"/logeado");
   }
 
 

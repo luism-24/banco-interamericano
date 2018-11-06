@@ -17,15 +17,15 @@ router.get('/', (req, res) => {
             console.log(err);
 
         } else {
-            jwt.sign({
+            /*jwt.sign({
                 exp: Math.floor(Date.now() / 1000) + (60 * 60),
                 data: 'foobar'
               }, 'secret', function(err, token) {
                 console.log(token);
-              });
-            // res.send(paises.rows);
-
+              });*/
+            res.send(paises.rows);
         }
+
 
     });
 
@@ -38,6 +38,7 @@ router.get('/operaciones', operacionesController.getOperacionesById);
 //all post routes
 router.post('/registro', controller.registre);
 router.post('/login', loginController.login);
+router.get('/logeado', loginController.logeado);
 router.post('/token', loginController.generateToken);
 router.post('/consignacion', controller.consignment);
 router.post('/retiro', controller.retirement);
