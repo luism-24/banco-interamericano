@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BancoService } from '../../../services/banco.service';
 import { NgForm } from '@angular/forms';
 import { Pais} from '../../../models/pais';
+import { User } from '../../../models/user';
+
 declare var M: any;
 
 @Component({
@@ -25,7 +27,8 @@ export class RegisterComponent implements OnInit {
     console.log(form.value);
     this.bancoService.register(form.value)
     .subscribe(res => {
-      M.toast({ html: "Usuario " + form.value.nombre + " regitrado" });  
+      this.clearForm(form);
+      M.toast({html: 'Registro exitoso'});
     });
     
   }
@@ -35,6 +38,15 @@ export class RegisterComponent implements OnInit {
     .subscribe(res => {
       this.bancoService.paises = res as Pais[];
     });
+  }
+
+  clearForm(form?: NgForm){
+
+    if(form){
+      form.resetForm();
+      this.bancoService.myUser = new User();
+    }
+
   }
 
 

@@ -15,9 +15,9 @@
                                 <label for="telefono">Telefono</label>
                         </div>
                         <div class="input-field  col s6 ">
-                                <select name="id_pais" class="browser-default">
+                                <select name="id_pais" #id_pais="ngModel" [(ngModel)]="bancoService.myUser.id_pais" class="browser-default">
                                         <option value="" disabled selected>Pais de residencia</option>
-                                        <option *ngFor="let pais of bancoService.paises; let i = index;" value={{i}}>{{pais.nombre}}</option>
+                                        <option *ngFor="let pais of bancoService.paises" value={{pais.id}}>{{pais.nombre}}</option>
                                 </select>
                         </div>
                         <div class="input-field  col s12">
@@ -37,7 +37,7 @@
                                 <label for="numCuenta">Numero de cuenta</label>
                         </div>
                         <div class="col s12">
-                                <button href="" class=" waves-effect waves-light btn">Registrarme</button>
+                                <button class=" waves-effect waves-light btn">Registrarme</button>
                         </div>
                 </div>
         </form>

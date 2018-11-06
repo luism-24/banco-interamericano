@@ -99,6 +99,10 @@ alter table OPERACIONES
 INSERT INTO TIPO_CUENTAS(nombre) VALUES('Corriente');
 INSERT INTO TIPO_CUENTAS(nombre) VALUES('De ahorro');
 
+INSERT INTO CUENTAS(numeroC, saldo, id_tipoC) VALUES('55555', 755000, 1);
+update PAISES set nombre='Chile' moneda="Peso chileno"
+  where id=2;
+
 INSERT INTO ROLES(nombre) VALUES('Administrador');
 INSERT INTO ROLES(nombre) VALUES('Cliente');
 
