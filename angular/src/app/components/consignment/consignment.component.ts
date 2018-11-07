@@ -14,10 +14,10 @@ export class ConsignmentComponent implements OnInit {
 
  ngOnInit() { }
 
- registerUser(form?: NgForm){
+ registerUser(){
 
-   console.log(form.value);
-   this.bancoService.register(form.value);
+   
+   
    
  }
 

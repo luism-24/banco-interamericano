@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
 import { Pais } from '../models/pais';
 import { Credencial } from '../models/credenciales';
+import { Transferencia } from '../models/transferencia';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class BancoService {
   paises: Pais[];
   credencial: Credencial;
   logeado: boolean;
+  transferencia: Transferencia;
 
   readonly URL_API = 'http://localhost:4000/banco-interamericano';
 
@@ -20,6 +22,7 @@ export class BancoService {
     this.myUser = new User();
     this.userLog = new User();
     this.credencial = new Credencial();
+    this.transferencia = new Transferencia();
     this.isLogged();
   }
 
@@ -42,6 +45,12 @@ export class BancoService {
 
   getUserLogged() {
     return this.http.get(this.URL_API + "/userLog");
+  }
+
+  transferir(tranfer: Transferencia){
+
+    return this.http.post(this.URL_API +'/tranferencia', tranfer);
+
   }
 
 

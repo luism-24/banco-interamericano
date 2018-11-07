@@ -16,12 +16,6 @@ router.get('/', (req, res) => {
             console.log(err);
 
         } else {
-            /*jwt.sign({
-                exp: Math.floor(Date.now() / 1000) + (60 * 60),
-                data: 'foobar'
-              }, 'secret', function(err, token) {
-                console.log(token);
-              });*/
             res.send(paises.rows);
         }
 

@@ -155,7 +155,7 @@ controller.consignment = (req, res) => {
         }
     })
 
-    
+
 
 }
 
@@ -167,7 +167,30 @@ controller.retirement = (req, res) => {
 
 controller.transfer = (req, res) => {
 
-    res.send('Se hacen las transferencias');
+    if (!token) {
+        res.status(401).send({
+            error: "Es necesario el token de autenticación"
+        })
+        return
+    }
+
+    token = token.replace('Bearer ', '')
+
+    jwt.verify(token, 'SECRETO_PARA_ENCRIPTACION', function (err, user) {
+        if (err) {
+            res.status(401).send({
+                error: 'Token inválido'
+            })
+        } else {
+            res.send({
+                token: token,
+                body: req.body
+            })
+            
+        }
+    })
+
+
 
 }
 
