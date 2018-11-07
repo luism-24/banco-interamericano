@@ -15,7 +15,7 @@ const conec = require('../conect/conection');
 
 controll.registre = (req, res) => {
 
-    var nombre = req.body.nombre;
+    /*var nombre = req.body.nombre;
     var correo = req.body.correo;
     var telefono = req.body.telefono;
     var contraseña = req.body.contrasena;
@@ -51,7 +51,7 @@ controll.registre = (req, res) => {
                 console.log('Usuario Registrado');
 
             }
-        });
+        });*/
 }
 
 controll.consignment = (req, res) => {

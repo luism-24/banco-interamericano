@@ -28,10 +28,11 @@ controller.login = async (req, res) => {
 
             user = consulta.rows;
 
+
             let SECRET = "SECRETO_PARA_ENCRIPTACION"
 
             //process.env.TOKEN = jwt.sign(user[0].nombre, SECRET, {expiresIn: 30});
-            process.env.TOKEN = jwt.sign({ id: user.id }, SECRET, {
+            process.env.TOKEN = jwt.sign({ id: user[0].id }, SECRET, {
                 expiresIn: 86400 // expires in 24 hours
             });
             console.log(process.env.TOKEN);
@@ -55,6 +56,28 @@ controller.logeado = (req, res) => {
     res.send(logeado);
 
 };
+
+controller.userLogeado = (req, res) => {
+
+    if (user !== undefined) {
+        var id = user[0].id;
+
+        connection.query("SELECT * FROM USUARIOS WHERE id=$1", [id], (err, userLog) => {
+
+            if (err) {
+                console.log(err);
+
+            } else {
+                res.send(userLog.rows);
+            }
+
+        });
+
+    }else{
+        res.send('No hay usuario logeado');
+    }
+
+}
 
 controller.generateToken = (req, res) => {
 

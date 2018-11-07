@@ -39,6 +39,7 @@ router.get('/operaciones', operacionesController.getOperacionesById);
 router.post('/registro', controller.registre);
 router.post('/login', loginController.login);
 router.get('/logeado', loginController.logeado);
+router.get('/userLog', loginController.userLogeado);
 router.post('/token', loginController.generateToken);
 router.post('/consignacion', controller.consignment);
 router.post('/retiro', controller.retirement);
