@@ -4,6 +4,7 @@ import { User } from '../models/user';
 import { Pais } from '../models/pais';
 import { Credencial } from '../models/credenciales';
 import { Transferencia } from '../models/transferencia';
+import { Retirar } from '../models/retiro';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class BancoService {
   credencial: Credencial;
   logeado: boolean;
   transferencia: Transferencia;
+  retiro: Retirar;
 
   readonly URL_API = 'http://localhost:4000/banco-interamericano';
 
@@ -23,6 +25,7 @@ export class BancoService {
     this.userLog = new User();
     this.credencial = new Credencial();
     this.transferencia = new Transferencia();
+    this.retiro = new Retirar();
     this.isLogged();
   }
 
@@ -50,6 +53,11 @@ export class BancoService {
   transferir(tranfer: Transferencia){
 
     return this.http.post(this.URL_API +'/tranferencia', tranfer);
+
+  }
+
+  retirar(retire: Retirar){
+    return this.http.post(this.URL_API+'/retiro', retire);
 
   }
 
