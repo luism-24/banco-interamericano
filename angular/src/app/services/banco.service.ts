@@ -18,7 +18,7 @@ export class BancoService {
   transferencia: Transferencia;
   retiro: Retirar;
 
-  readonly URL_API = 'http://localhost:4000/banco-interamericano';
+  readonly URL_API = 'https://bancopweb.herokuapp.com/banco-interamericano';
 
   constructor(private http: HttpClient) {
     this.myUser = new User();
