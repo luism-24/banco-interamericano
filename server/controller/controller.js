@@ -1,19 +1,97 @@
-const controll = {};
+const controller = {};
 
-//Para enviar el codigo de confirmación 
+//Conexion de la bd postgres
+const connection = require('../conect/conection');
+//JSONWEBTOKEN 
+const jwt = require('jsonwebtoken');
+var user;
+var token;
+var logeado = false;
+
 //Para enviar el codigo de confirmación 
 const Nexmo = require('nexmo');
 const nexmo = new Nexmo({
     apiKey: '68e571d2',
     apiSecret: 'iMePsw81Iwv6CWFk'
 });
-
 var numero = '3187934956';
 
-//Conexion de la bd postgres
-const conec = require('../conect/conection');
 
-controll.registre = (req, res) => {
+function aleatorio(inferior, superior) {
+    let resAleatorio = Math.floor((Math.random() * (superior - inferior + 1)) + inferior);
+    return resAleatorio;
+}
+
+controller.login = async (req, res) => {
+
+    console.log(req.body);
+    const nombre = req.body.nombre;
+    const contraseña = req.body.contrasena;
+    const code = req.body.codigo;
+
+    try {
+        const consulta = await connection.query(`SELECT * FROM usuarios WHERE nombre LIKE '${nombre}%'`);
+
+        if (consulta.rows && consulta.rows[0].contraseña === contraseña &&
+            consulta.rows[0].codigo === code) {
+
+            user = consulta.rows;
+
+
+            let SECRET = "SECRETO_PARA_ENCRIPTACION"
+
+            //process.env.TOKEN = jwt.sign(user[0].nombre, SECRET, {expiresIn: 30});
+            process.env.TOKEN = jwt.sign({ id: user[0].id }, SECRET, {
+                expiresIn: 86400 // expires in 24 hours
+            });
+            token = process.env.TOKEN;
+            console.log(process.env.TOKEN);
+
+            logeado = true;
+
+            res.header('Authorization', "Bearer " + process.env.TOKEN);
+
+
+        } else {
+            logeado = false;
+            res.json({
+                message: 'Cuenta inexistente o contraseña incorrecta'
+            });
+        }
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+controller.logeado = (req, res) => {
+
+    res.send(logeado);
+
+};
+
+controller.userLogeado = (req, res) => {
+
+    if (user !== undefined) {
+        var id = user[0].id;
+
+        connection.query("SELECT * FROM USUARIOS WHERE id=$1", [id], (err, userLog) => {
+
+            if (err) {
+                console.log(err);
+
+            } else {
+                res.send(userLog.rows);
+            }
+
+        });
+
+    } else {
+        res.send('No hay usuario logeado');
+    }
+
+}
+
+controller.registre = (req, res) => {
 
     /*var nombre = req.body.nombre;
     var correo = req.body.correo;
@@ -54,27 +132,58 @@ controll.registre = (req, res) => {
         });*/
 }
 
-controll.consignment = (req, res) => {
+controller.consignment = (req, res) => {
 
-    res.send('Se hacen las consignaciones');
+    if (!token) {
+        res.status(401).send({
+            error: "Es necesario el token de autenticación"
+        })
+        return
+    }
+
+    token = token.replace('Bearer ', '')
+
+    jwt.verify(token, 'SECRETO_PARA_ENCRIPTACION', function (err, user) {
+        if (err) {
+            res.status(401).send({
+                error: 'Token inválido'
+            })
+        } else {
+            res.send({
+                token: token
+            })
+        }
+    })
+
+    
 
 }
 
-controll.retirement = (req, res) => {
+controller.retirement = (req, res) => {
 
     res.send('Se hacen los retiros');
 
 }
 
-controll.transfer = (req, res) => {
+controller.transfer = (req, res) => {
 
     res.send('Se hacen las transferencias');
 
 }
 
-function aleatorio(inferior, superior) {
-    var resAleatorio = Math.floor((Math.random() * (superior - inferior + 1)) + inferior);
-    return resAleatorio;
-}
 
-module.exports = controll;
+controller.refreshToken = (req, res) => {
+    const allowRefresh = req.body.allowRefresh;
+    let SECRET = "SECRETO_PARA_ENCRIPTACION"
+    if (allowRefresh) {
+        process.env.TOKEN = jwt.sign(user, SECRET);
+        res.json({
+            token: process.env.TOKEN
+        });
+    } else {
+        res.json({
+            message: "Acción no permitida"
+        })
+    }
+}
+module.exports = controller, token; 

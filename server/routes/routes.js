@@ -7,7 +7,6 @@ const connection = require('../conect/conection');
 
 const controller = require('../controller/controller');
 const operacionesController = require('../controller/operaciones');
-const loginController = require('../controller/login');
 //all get routes 
 router.get('/', (req, res) => {
 
@@ -37,12 +36,12 @@ router.get('/operaciones', operacionesController.getOperacionesById);
 
 //all post routes
 router.post('/registro', controller.registre);
-router.post('/login', loginController.login);
-router.get('/logeado', loginController.logeado);
-router.get('/userLog', loginController.userLogeado);
-router.post('/token', loginController.generateToken);
+router.post('/login', controller.login);
+router.get('/logeado', controller.logeado);
+router.get('/userLog', controller.userLogeado);
 router.post('/consignacion', controller.consignment);
 router.post('/retiro', controller.retirement);
 router.post('/transferencia', controller.transfer);
+
 
 module.exports = router;
