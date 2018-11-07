@@ -182,10 +182,9 @@ controller.transfer = (req, res) => {
                 error: 'Token inválido'
             })
         } else {
-            res.send({
-                token: token,
-                body: req.body
-            })
+        
+            console.log(req.body);
+            
             
         }
     })
