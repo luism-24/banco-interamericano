@@ -47,9 +47,9 @@ export class BancoService {
     return this.http.get(this.URL_API + "/userLog");
   }
 
-  transferir(tranfer: Transferencia){
+  transferir(tranfer: Transferencia, user){
 
-    return this.http.post(this.URL_API +'/tranferencia', tranfer);
+    return this.http.post(this.URL_API +'/transferencia', tranfer);
 
   }
 
