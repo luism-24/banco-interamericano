@@ -93,7 +93,7 @@ controller.userLogeado = (req, res) => {
 
 controller.registre = (req, res) => {
 
-    /*var nombre = req.body.nombre;
+    var nombre = req.body.nombre;
     var correo = req.body.correo;
     var telefono = req.body.telefono;
     var contraseña = req.body.contrasena;
@@ -129,7 +129,7 @@ controller.registre = (req, res) => {
                 console.log('Usuario Registrado');
 
             }
-        });*/
+        });
 }
 
 controller.consignment = (req, res) => {
